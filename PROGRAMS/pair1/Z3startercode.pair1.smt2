@@ -7,7 +7,7 @@
 ;;            return a2;
 ;;        }
 ;;
-;; and 
+;; and
 ;;
 ;;        public int sum(int x, int y, int z){
 ;;            int a1 = x + y;
@@ -36,8 +36,26 @@
 ;;;;;;;;;;;;;;;;; END STUDENT CODE ;;;;;;;;;;;;;;;
 
 (check-sat)
-;; If needed, run
-;; (echo "-------------------------------- Getting model ---------------------------------")
-;; (get-model)
+;;If needed, run
+(echo "-------------------------------- Getting model ---------------------------------")
+(get-model)
 
-(pop)
+;;;;;;;;;;;;;;;;;; RESULT STARTS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;
+sat
+-------------------------------- Getting model ---------------------------------
+(model
+  (define-fun z () Int
+    1)
+  (define-fun x () Int
+    0)
+  (define-fun y () Int
+    0)
+  (define-fun mutated_a2 () Int
+    1)
+  (define-fun a2 () Int
+    (- 1))
+  (define-fun a1 () Int
+    0)
+)
+
+;;;;;;;;;;;;;;;;;;;; RESULT ENDS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
