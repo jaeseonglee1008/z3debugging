@@ -1,0 +1,42 @@
+;;;;;;;;;;;;;;;;; START STUDENT CODE ;;;;;;;;;;;;;;;
+
+; TODO: Issue a constraint that makes trian = trian1 + trian2 + trian3
+(assert (= trian (+ trian1 trian2 trian3)))
+
+; TODO: Add constraints to classify Mutant 84 as equivalent or non-equivalent
+(assert (= initial-condition (or (<= (+ a b) c) (<= (+ a c) b) (<= (+ b c) a))))
+;if (a + b <= c || a + c <= b || b + c <= a) {
+(assert (= mutated-condition (or (<= (+ a b) c) (<= (+ a c) b) (< (+ b c) a))))
+;if (a + b <= c || a + c <= b || b + c < a) {
+
+;;;;;;;;;;;;;;;;; END STUDENT CODE ;;;;;;;;;;;;;;;
+
+Since the value of this variable determines the return value, we have issued a constraint that makes trian = trian1 + trian2 + trian3.
+The If statement of each method has been converted to the correct format.
+We then created a condition that does not match the boolean value and initial condition of the mutant. The results appear.
+(Not (= mutation condition initial condition)))
+z-solver returned 'sat' and a, b, and c as 3, 1, and 2 values. In other words, this value has different consequences for these two methods.
+;;;;;;;;;;;;;;;;;; RESULT STARTS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;
+sat
+-------------------------------- Getting model ---------------------------------
+(model
+  (define-fun b () Int
+    1)
+  (define-fun a () Int
+    3)
+  (define-fun c () Int
+    2)
+  (define-fun trian1 () Int
+    0)
+  (define-fun trian2 () Int
+    0)
+  (define-fun trian3 () Int
+    0)
+  (define-fun mutated-condition () bool
+    false)
+  (define-fun initial-condition () bool
+    true)
+  (define-fun trian () Int
+    0)
+)
+;;;;;;;;;;;;;;;;;; RESULT ENDS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;

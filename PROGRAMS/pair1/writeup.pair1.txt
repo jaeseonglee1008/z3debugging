@@ -2,9 +2,10 @@
 (assert (= a2 (+ a1 z)))
 (assert (= mutated_a2 (- a1 z)))
 (assert (= a2 mutated_a2))
-when we tested a2 = mutated_a2 from the 4th line of code above, we received return value with 'sat'.
-This tells us the Mutant and Sum methods could have same input for same output but this doesnt mean that
-the Mutant and Sum methods are identical. so we changed 4th line of code like (assert (not (= a2 mutated_a2))).
+In the fourth line of the above code, when we tested a2 = mutated_a2, we received a return value with 'sat'.
+This indicates that the Mutant and Sum methods can have the same input for the same output,
+but this does not mean that the Mutant and Sum methods are identical.
+So we need to change the fourth line of code (such as assert (not (= a2 mutated_a2))).
 
 -----------Our code and result below--------------
 
@@ -36,5 +37,5 @@ sat
 )
 ;;;;;;;;;;;;;;;;;;;; RESULT ENDS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-Z3 program returned 'sat' with values 0, 0 and 1 on x, y and z on our test
-which means there exists certain input values that returns different return values from each methods.
+The Z3 interpreter returned 'sat' for the values 0, 0, and 1 in x, y, and z in the test.
+This means that each method has a specific input value that returns a different return value.

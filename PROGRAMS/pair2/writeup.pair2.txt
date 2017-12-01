@@ -1,0 +1,17 @@
+;;;;;;;;;;;;;;;;; START STUDENT CODE ;;;;;;;;;;;;;;;
+
+(assert (= initial-condition (= trian 0)))  ;line34   if (trian == 0) {
+(assert (= mutated-condition (<= trian 0))) ;line34   if (trian <= 0) {
+
+;;;;;;;;;;;;;;;;; END STUDENT CODE ;;;;;;;;;;;;;;;
+
+Here, we store the Boolean value of each condition in the constant object.
+Then, if these two Boolean values are not the same, check to see if there are any satisfactory a, b, and c values.
+(assert (not (= mutated-condition initial-condition)))
+If the Z solver returns 'sat' as some value, these two methods must have a specific input value that returns a different return value.
+However, in this case, the Z solver returns 'unsat'. In other words, the mutation and the original method work the same.
+
+;;;;;;;;;;;;;;;;;; RESULT STARTS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;
+=================================== MUTANT 59 ==================================
+unsat
+;;;;;;;;;;;;;;;;;; RESULT ENDS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;

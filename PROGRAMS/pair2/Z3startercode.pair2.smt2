@@ -85,8 +85,8 @@
 
 ;;;;;;;;;;;;;;;;; START STUDENT CODE ;;;;;;;;;;;;;;;
 
-(assert (= initial-condition (= trian 0)))
-(assert (= mutated-condition (<= trian 0)))
+(assert (= initial-condition (= trian 0)))  ;line34   if (trian <= 0) {
+(assert (= mutated-condition (<= trian 0))) ;line34   if (trian <= 0) {
 
 ;;;;;;;;;;;;;;;;; END STUDENT CODE ;;;;;;;;;;;;;;;
 
